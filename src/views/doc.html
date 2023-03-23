@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        body {
+            height: 100vh;
+            border: 0.1px double transparent;
+            background: #010011;
+            color: #fff;
+        }
+
+        body::-webkit-scrollbar {
+            height: 0;
+            width: 5px;
+            background: #000;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #3e3e3e;
+            border-radius: 5px;
+        }
+
+        .border {
+            height: 70px;
+            border-radius: 10px;
+            width: 98%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000018;
+            margin: 20px auto;
+            border: 2px solid #23242a;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .line {
+            width: 98%;
+            padding: 5px;
+            border-radius: 10px;
+            background: #23242a;
+            margin: 20px auto;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        div {
+            display: flex;
+        }
+
+        .box {
+            margin: 10px;
+            width: 150px;
+            height: calc(100% - 20px);
+            background: #000018;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .router {
+            background: #000018;
+        }
+
+        @media screen and (max-width:750px) {
+            .line {
+                height: auto;
+                flex-wrap: wrap;
+            }
+
+            .boxes {
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .box {
+                width: 45%;
+                height: 70px;
+            }
+
+            .router {
+                width: 100%;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border">Empty APIs</div>
+
+    <div class="line">
+        <div class="box router">
+            <a target="_blank">/products</a>
+        </div>
+        <div class="boxes">
+            <div class="box">GET</div>
+            <div class="box">GET /:id</div>
+            <div class="box">POST</div>
+            <div class="box">PUT /:id</div>
+            <div class="box">DELETE /:id</div>
+        </div>
+    </div>
+    <div class="line">
+        <div class="box router">
+            <a target="_blank">/objects</a>
+        </div>
+        <div class="boxes">
+            <div class="box">GET</div>
+            <div class="box">GET /:id</div>
+            <div class="box">POST</div>
+            <div class="box">PUT /:id</div>
+            <div class="box">DELETE /:id</div>
+        </div>
+    </div>
+    <div class="line">
+        <div class="box router">
+            <a target="_blank">/items</a>
+        </div>
+        <div class="boxes">
+            <div class="box">GET</div>
+            <div class="box">GET /:id</div>
+            <div class="box">POST</div>
+            <div class="box">PUT /:id</div>
+            <div class="box">DELETE /:id</div>
+        </div>
+    </div>
+
+    <div class="border">APIs with data</div>
+
+    <div class="line">
+        <div class="box router">
+            <a target="_blank">/db.users</a>
+        </div>
+        <div class="boxes">
+            <div class="box">/random</div>
+            <div class="box">GET</div>
+            <div class="box">GET /:id</div>
+            <div class="box">POST</div>
+            <div class="box">PUT /:id</div>
+            <div class="box">DELETE /:id</div>
+        </div>
+    </div>
+    <div class="line">
+        <div class="box router">
+            <a target="_blank">/db.albums</a>
+        </div>
+        <div class="boxes">
+            <div class="box">/random</div>
+            <div class="box">GET</div>
+            <div class="box">GET /:id</div>
+            <div class="box">POST</div>
+            <div class="box">PUT /:id</div>
+            <div class="box">DELETE /:id</div>
+        </div>
+    </div>
+    <div class="line">
+        <div class="box router">
+            <a target="_blank">/db.comments</a>
+        </div>
+        <div class="boxes">
+            <div class="box">/random</div>
+            <div class="box">GET</div>
+            <div class="box">GET /:id</div>
+            <div class="box">POST</div>
+            <div class="box">PUT /:id</div>
+            <div class="box">DELETE /:id</div>
+        </div>
+    </div>
+    <div class="line">
+        <div class="box router">
+            <a target="_blank">/db.posts</a>
+        </div>
+        <div class="boxes">
+            <div class="box">/random</div>
+            <div class="box">GET</div>
+            <div class="box">GET /:id</div>
+            <div class="box">POST</div>
+            <div class="box">PUT /:id</div>
+            <div class="box">DELETE /:id</div>
+        </div>
+    </div>
+    <div class="line">
+        <div class="box router">
+            <a target="_blank">/db.todos</a>
+        </div>
+        <div class="boxes">
+            <div class="box">/random</div>
+            <div class="box">GET</div>
+            <div class="box">GET /:id</div>
+            <div class="box">POST</div>
+            <div class="box">PUT /:id</div>
+            <div class="box">DELETE /:id</div>
+        </div>
+    </div>
+
+    <script>
+        let line = document.querySelectorAll(".line")
+        line.forEach((e) => {
+            let router = e.querySelector(".router")
+            let a = router.querySelector("a")
+            let path = `${window.origin}${a.innerText}`
+            a.setAttribute("href", path)
+        })
+    </script>
+</body>
+
+</html>
